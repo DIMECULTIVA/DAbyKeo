@@ -218,13 +218,12 @@ window.onclick = function(event) {
 // ==========================================
 document.querySelectorAll('form[name="contact"]').forEach(form => {
     form.addEventListener('submit', function(e) {
-        e.preventDefault(); // Stops the page from redirecting
+        e.preventDefault(); 
         
         const formData = new FormData(this);
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.innerText;
         
-        // Change button text while sending
         submitBtn.innerText = "Sending...";
         submitBtn.disabled = true;
 
@@ -234,7 +233,6 @@ document.querySelectorAll('form[name="contact"]').forEach(form => {
             body: new URLSearchParams(formData).toString()
         })
         .then(() => {
-            // Hide the form and show the success message
             this.style.display = 'none';
             const successMsg = this.nextElementSibling;
             if (successMsg && successMsg.classList.contains('success-message')) {
