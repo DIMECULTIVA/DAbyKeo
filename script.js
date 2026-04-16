@@ -123,10 +123,8 @@ gsap.utils.toArray('.gs-reveal').forEach(function(elem) {
 let scrollMilestones = { 25: false, 50: false, 75: false, 90: false };
 
 window.addEventListener('scroll', () => {
-    // Calculate percentage scrolled
     let scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
     
-    // Check milestones and fire Google Analytics event silently
     [25, 50, 75, 90].forEach(milestone => {
         if (scrollPercent >= milestone && !scrollMilestones[milestone]) {
             scrollMilestones[milestone] = true;
@@ -190,7 +188,6 @@ const modalBody = document.getElementById('modalBody');
 const modalFooter = document.getElementById('modalFooter');
 
 function openModal(tech, projectId) {
-    lenis.stop(); 
     modalTitle.innerText = `${tech.toUpperCase()} - Code & Context`;
     const dataContent = projectData[projectId][tech];
     modalBody.innerText = dataContent;
@@ -208,7 +205,6 @@ function openModal(tech, projectId) {
 
 function closeModal() {
     modal.style.display = 'none';
-    lenis.start(); 
 }
 
 window.onclick = function(event) {
@@ -216,3 +212,39 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+// ==========================================
+// 7. AJAX NETLIFY FORM SUBMISSION
+// ==========================================
+document.querySelectorAll('form[name="contact"]').forEach(form => {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault(); // Stops the page from redirecting
+        
+        const formData = new FormData(this);
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        
+        // Change button text while sending
+        submitBtn.innerText = "Sending...";
+        submitBtn.disabled = true;
+
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            // Hide the form and show the success message
+            this.style.display = 'none';
+            const successMsg = this.nextElementSibling;
+            if (successMsg && successMsg.classList.contains('success-message')) {
+                successMsg.style.display = 'block';
+            }
+        })
+        .catch((error) => {
+            alert('There was an error sending your message. Please reach out on WhatsApp.');
+            submitBtn.innerText = originalBtnText;
+            submitBtn.disabled = false;
+        });
+    });
+});
