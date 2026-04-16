@@ -18,7 +18,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); 
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
 </head>
 <body>
@@ -99,6 +99,8 @@
             <p class="text-center mb-3">Have a specific query? Drop a message below and it will reach my inbox directly.</p>
             
             <form name="contact" method="POST" data-netlify="true" class="glass-form">
+                <input type="hidden" name="form-name" value="contact">
+                
                 <div class="input-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
@@ -107,6 +109,10 @@
                 <textarea name="message" placeholder="How can I help you optimize your data?" rows="5" required></textarea>
                 <button type="submit" class="neon-btn primary" style="width: 100%;">Send Secure Message</button>
             </form>
+            
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i> Request sent successfully! I'll get back to you soon.
+            </div>
         </div>
     </section>
 
