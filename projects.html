@@ -89,7 +89,9 @@
         <div class="modal-content glass">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle" class="neon-text-cyan">Project Data</h2>
-            <div id="modalBody" class="modal-body" onwheel="event.stopPropagation()" ontouchmove="event.stopPropagation()"></div>
+            
+            <div id="modalBody" class="modal-body" data-lenis-prevent onwheel="event.stopPropagation()" ontouchmove="event.stopPropagation()"></div>
+            
             <div class="modal-footer" id="modalFooter"></div>
         </div>
     </div>
