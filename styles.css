@@ -20,7 +20,7 @@ h1, h2, h3 { letter-spacing: 1px; }
 .mt-2 { margin-top: 2rem; }
 .mb-3 { margin-bottom: 3rem; }
 
-/* --- MOVIE INTRO SEQUENCE --- */
+/* MOVIE INTRO SEQUENCE */
 #movie-intro {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
     background: #000000; z-index: 10000; 
@@ -30,7 +30,7 @@ h1, h2, h3 { letter-spacing: 1px; }
 .intro-title { font-size: clamp(1.5rem, 4vw, 2.5rem); letter-spacing: 15px; margin-right: -15px; opacity: 0; margin-bottom: 10px; text-align: center;}
 .intro-subtitle { font-size: 0.9rem; letter-spacing: 8px; margin-right: -8px; color: var(--neon-cyan); opacity: 0; text-align: center;}
 
-/* --- 3D WEBGL & CINEMATIC EFFECTS --- */
+/* 3D WEBGL & CINEMATIC EFFECTS */
 #webgl-canvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none; background: var(--bg-color); }
 .film-grain {
     position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: -1; opacity: 0.04;
@@ -102,20 +102,33 @@ nav {
 .neon-chip { background: transparent; color: var(--text-main); border: 1px solid rgba(255,255,255,0.2); padding: 0.4rem 0.8rem; font-size: 0.8rem; border-radius: 20px; cursor: pointer; transition: 0.3s; }
 .neon-chip:hover { border-color: var(--neon-purple); color: var(--neon-purple); box-shadow: 0 0 10px rgba(188, 19, 254, 0.3); }
 
-/* --- NETLIFY CONTACT FORM --- */
+/* NETLIFY CONTACT FORM */
 .contact-section { padding: 2rem 5% 8rem; max-width: 800px; margin: 0 auto; }
 .glass-form { background: rgba(17, 17, 17, 0.8); padding: 2.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 1.5rem; backdrop-filter: blur(5px); }
 .glass-form input, .glass-form textarea { width: 100%; background: #0a0a0a; border: 1px solid rgba(255,255,255,0.1); color: var(--text-main); padding: 1rem; border-radius: 4px; font-family: var(--font-main); outline: none; transition: 0.3s; }
 .glass-form input:focus, .glass-form textarea:focus { border-color: var(--neon-cyan); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
 .input-group { display: flex; gap: 1.5rem; }
 
+/* SUCCESS MESSAGE STYLING */
+.success-message {
+    display: none;
+    background: rgba(0, 255, 102, 0.1);
+    border: 1px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 1rem;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+    margin-top: 1.5rem;
+}
+
 /* Modal */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px); align-items: center; justify-content: center; padding: 1rem;}
-.modal-content.glass { background: rgba(17, 17, 17, 0.95); border: 1px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 243, 255, 0.2); border-radius: 12px; width: 100%; max-width: 800px; max-height: 80vh; display: flex; flex-direction: column; overflow: hidden; animation: modalSlideIn 0.4s ease-out forwards; }
+.modal-content.glass { background: rgba(17, 17, 17, 0.95); border: 1px solid var(--neon-cyan); box-shadow: 0 0 30px rgba(0, 243, 255, 0.2); border-radius: 12px; width: 100%; max-width: 800px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; animation: modalSlideIn 0.4s ease-out forwards; }
 .close-btn { position: absolute; top: 15px; right: 20px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 10;}
 .close-btn:hover { color: var(--neon-purple); }
 .modal h2 { padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.2rem;}
-.modal-body { padding: 1.5rem; overflow-y: auto; background: #0a0a0a; font-family: monospace; color: #00ff66; white-space: pre-wrap; font-size: 0.9rem;}
+.modal-body { flex: 1; min-height: 0; padding: 1.5rem; overflow-y: auto; background: #0a0a0a; font-family: monospace; color: #00ff66; white-space: pre-wrap; font-size: 0.9rem; overscroll-behavior: contain; }
 .modal-footer { padding: 1rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; }
 
 @keyframes modalSlideIn { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
