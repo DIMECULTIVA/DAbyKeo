@@ -63,6 +63,20 @@
                     </div>
                 </div>
             </div>
+
+            <div class="project-card gs-reveal">
+                <div class="project-thumb">
+                    <img src="BikeSales.jpg" alt="Bike Sales Interactive Dashboard">
+                    <div class="overlay">Excel Interactive Dashboard</div>
+                </div>
+                <div class="project-info">
+                    <h3>Customer Bike Sales Analysis</h3>
+                    <p>End-to-end Excel pipeline transforming raw demographic data into an interactive dashboard. Utilized advanced data cleaning, complex Pivot Tables, and dynamic slicers to analyze purchasing behavior.</p>
+                    <div class="tech-stack-buttons">
+                        <button class="neon-chip" onclick="openModal('excel', 'project_bike')">View Methodology</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -89,9 +103,7 @@
         <div class="modal-content glass">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle" class="neon-text-cyan">Project Data</h2>
-            
             <div id="modalBody" class="modal-body" data-lenis-prevent onwheel="event.stopPropagation()" ontouchmove="event.stopPropagation()"></div>
-            
             <div class="modal-footer" id="modalFooter"></div>
         </div>
     </div>
