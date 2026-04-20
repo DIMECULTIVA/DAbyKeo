@@ -178,7 +178,7 @@ WITH Company_Year (company, years, total_laid_off) AS (
 )
 SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
         
-        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst"
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Company%20Layoffs%20Cleaning%20and%20Exploratory%20Project.sql"
     },
 
     project_bike: {
@@ -202,7 +202,8 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
 > Implemented global Slicers, allowing executives to cross-filter the entire dashboard by Marital Status, Region, and Education instantly.
 > INSIGHT DELIVERED: Discovered that "Middle-Aged" individuals with shorter commutes (0-1 Miles) and a Bachelor's Degree represent the highest-converting target demographic.`,
         
-        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst"
+        // This is the newly updated link pointing straight to the file!
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Excel%20Project%20-%20Bike%20Sales.xlsx"
     }
 };
 
