@@ -178,7 +178,31 @@ WITH Company_Year (company, years, total_laid_off) AS (
 )
 SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
         
-        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Company%20Layoffs%20Cleaning%20and%20Exploratory%20Project.sql"
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst"
+    },
+
+    project_bike: {
+        excel: `-- EXECUTIVE SUMMARY: Interactive Customer Bike Sales Dashboard
+-- Objective: Transform raw demographic dataset into an interactive dashboard to identify key drivers of customer purchase behavior.
+
+-- Phase 1: Data Extraction & Cleaning
+> Extracted 1,000+ raw records into a dedicated Working Sheet.
+> Standardized categorical variables (e.g., updating 'M' to 'Married', 'S' to 'Single' for readability).
+> Handled structural anomalies, removed duplicate entries, and formatted numerical currencies.
+> Engineered new features using Nested IF formulas (e.g., dynamically creating 'Age Brackets' like Adolescent, Middle Age, Old).
+
+-- Phase 2: Aggregation & Pivot Data Modeling
+> Built complex Pivot Tables to aggregate demographic behaviors.
+> Calculated Average Income per Purchase, segmented by Gender and purchase status.
+> Mapped Customer Commute Distances against purchase frequency to find geographic correlations.
+> Correlated Age Brackets with overall bike sales volume.
+
+-- Phase 3: Dashboard Architecture & Visualization
+> Engineered a dynamic, front-end dashboard utilizing interconnected Pivot Charts.
+> Implemented global Slicers, allowing executives to cross-filter the entire dashboard by Marital Status, Region, and Education instantly.
+> INSIGHT DELIVERED: Discovered that "Middle-Aged" individuals with shorter commutes (0-1 Miles) and a Bachelor's Degree represent the highest-converting target demographic.`,
+        
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst"
     }
 };
 
