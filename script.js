@@ -202,8 +202,13 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
 > Implemented global Slicers, allowing executives to cross-filter the entire dashboard by Marital Status, Region, and Education instantly.
 > INSIGHT DELIVERED: Discovered that "Middle-Aged" individuals with shorter commutes (0-1 Miles) and a Bachelor's Degree represent the highest-converting target demographic.`,
         
-        // This is the newly updated link pointing straight to the file!
         githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Excel%20Project%20-%20Bike%20Sales.xlsx"
+    },
+
+    project_airbnb: {
+        // Using an iframe ensures the Tableau dashboard renders safely inside the modal without breaking the site's javascript
+        tableau: `<iframe src="https://public.tableau.com/views/AirbnbFullProject_17773721027010/Dashboard1?:showVizHome=no&:embed=true" width="100%" height="650px" style="border:none;"></iframe>`,
+        githubLink: "https://public.tableau.com/views/AirbnbFullProject_17773721027010/Dashboard1"
     }
 };
 
@@ -213,15 +218,29 @@ const modalBody = document.getElementById('modalBody');
 const modalFooter = document.getElementById('modalFooter');
 
 function openModal(tech, projectId) {
-    modalTitle.innerText = `${tech.toUpperCase()} - Code & Context`;
+    modalTitle.innerText = `${tech.toUpperCase()} - Project View`;
     const dataContent = projectData[projectId][tech];
-    modalBody.innerText = dataContent;
-    modalBody.style.fontFamily = 'monospace';
-    modalBody.style.background = '#0a0a0a';
+    
+    // Dynamic styling check: Render HTML for Tableau, render secure Text for SQL/Excel
+    if (tech === 'tableau') {
+        modalBody.innerHTML = dataContent;
+        modalBody.style.fontFamily = 'var(--font-main)';
+        modalBody.style.background = '#ffffff'; // White background for the dashboard
+        modalBody.style.padding = '0'; // Flush edges for the iframe
+        modalBody.style.overflow = 'hidden';
+        modalBody.style.color = '#000000';
+    } else {
+        modalBody.innerText = dataContent;
+        modalBody.style.fontFamily = 'monospace';
+        modalBody.style.background = '#0a0a0a';
+        modalBody.style.padding = '1.5rem';
+        modalBody.style.color = '#00ff66';
+        modalBody.style.overflowY = 'auto';
+    }
 
     let footerHTML = `<a href="https://wa.me/27663300304" class="neon-btn primary small" target="_blank">Discuss this data</a>`;
     if (projectData[projectId].githubLink) {
-        footerHTML = `<a href="${projectData[projectId].githubLink}" target="_blank" class="neon-btn outline small" style="margin-right: 15px;"><i class="fab fa-github"></i> View Full Architecture</a>` + footerHTML;
+        footerHTML = `<a href="${projectData[projectId].githubLink}" target="_blank" class="neon-btn outline small" style="margin-right: 15px;"><i class="fas fa-external-link-alt"></i> View Source Project</a>` + footerHTML;
     }
     
     modalFooter.innerHTML = footerHTML;
@@ -230,6 +249,7 @@ function openModal(tech, projectId) {
 
 function closeModal() {
     modal.style.display = 'none';
+    modalBody.innerHTML = ''; // Clear iframe memory when closed
 }
 
 window.onclick = function(event) {
