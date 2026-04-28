@@ -128,7 +128,7 @@ nav {
 .close-btn { position: absolute; top: 15px; right: 20px; color: #aaa; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 10;}
 .close-btn:hover { color: var(--neon-purple); }
 .modal h2 { padding: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.2rem;}
-.modal-body { flex: 1; min-height: 0; padding: 1.5rem; overflow-y: auto; background: #0a0a0a; font-family: monospace; color: #00ff66; white-space: pre-wrap; font-size: 0.9rem; overscroll-behavior: contain; }
+.modal-body { flex: 1; min-height: 0; padding: 1.5rem; overflow-y: auto; overflow-x: hidden; background: #0a0a0a; font-family: monospace; color: #00ff66; white-space: pre-wrap; font-size: 0.9rem; overscroll-behavior: contain; }
 .modal-footer { padding: 1rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: flex-end; gap: 1rem; flex-wrap: wrap; background: rgba(17, 17, 17, 0.95); z-index: 2; }
 
 @keyframes modalSlideIn { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
