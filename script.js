@@ -206,9 +206,13 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
     },
 
     project_airbnb: {
-        // Using an iframe ensures the Tableau dashboard renders safely inside the modal without breaking the site's javascript
         tableau: `<iframe src="https://public.tableau.com/views/AirbnbFullProject_17773721027010/Dashboard1?:showVizHome=no&:embed=true" width="100%" height="650px" style="border:none;"></iframe>`,
         githubLink: "https://public.tableau.com/views/AirbnbFullProject_17773721027010/Dashboard1"
+    },
+
+    project_powerbi: {
+        powerbi: `<iframe title="Data Profession Data Breakdown" width="100%" height="650px" src="https://aka.ms/AA10rquw" frameborder="0" allowFullScreen="true"></iframe>`,
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst" 
     }
 };
 
@@ -221,12 +225,11 @@ function openModal(tech, projectId) {
     modalTitle.innerText = `${tech.toUpperCase()} - Project View`;
     const dataContent = projectData[projectId][tech];
     
-    // Dynamic styling check: Render HTML for Tableau, render secure Text for SQL/Excel
-    if (tech === 'tableau') {
+    if (tech === 'tableau' || tech === 'powerbi') {
         modalBody.innerHTML = dataContent;
         modalBody.style.fontFamily = 'var(--font-main)';
-        modalBody.style.background = '#ffffff'; // White background for the dashboard
-        modalBody.style.padding = '0'; // Flush edges for the iframe
+        modalBody.style.background = '#ffffff'; 
+        modalBody.style.padding = '0'; 
         modalBody.style.overflow = 'hidden';
         modalBody.style.color = '#000000';
     } else {
@@ -249,7 +252,7 @@ function openModal(tech, projectId) {
 
 function closeModal() {
     modal.style.display = 'none';
-    modalBody.innerHTML = ''; // Clear iframe memory when closed
+    modalBody.innerHTML = ''; 
 }
 
 window.onclick = function(event) {
