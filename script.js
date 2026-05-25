@@ -233,6 +233,11 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
 > The data revealed that Python users reported a significantly higher average starting salary compared to those who exclusively used R, and that respondents aged 25-35 formed the largest demographic actively seeking new roles.</div>`,
         
         githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Data%20Profession%20Data%20Breakdown.pbix" 
+    },
+    
+    project_python: {
+        python: `<iframe src="python-project.html" width="100%" height="650px" style="border:none; background: #ffffff;"></iframe>`,
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/BMI_Calculator.ipynb" 
     }
 };
 
@@ -245,8 +250,7 @@ function openModal(tech, projectId) {
     modalTitle.innerText = `${tech.toUpperCase()} - Project View`;
     const dataContent = projectData[projectId][tech];
     
-    // Check if it's the Tableau iframe OR the PowerBI image+HTML case study
-    if (tech === 'tableau') {
+    if (tech === 'tableau' || tech === 'python') {
         modalBody.innerHTML = dataContent;
         modalBody.style.fontFamily = 'var(--font-main)';
         modalBody.style.background = '#ffffff'; 
@@ -254,13 +258,11 @@ function openModal(tech, projectId) {
         modalBody.style.overflow = 'hidden';
         modalBody.style.color = '#000000';
     } else if (tech === 'powerbi') {
-        // Use innerHTML so the image renders, but keep the dark hacker background
         modalBody.innerHTML = dataContent;
         modalBody.style.background = '#0a0a0a';
         modalBody.style.padding = '1.5rem';
         modalBody.style.overflowY = 'auto';
     } else {
-        // Pure text for SQL and Excel
         modalBody.innerText = dataContent;
         modalBody.style.fontFamily = 'monospace';
         modalBody.style.background = '#0a0a0a';
