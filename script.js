@@ -85,14 +85,18 @@ if (canvas) {
     const clock = new THREE.Clock();
     function animate3D() {
         requestAnimationFrame(animate3D);
-        const elapsedTime = clock.getElapsedTime();
-        particles.rotation.y = elapsedTime * 0.05;
-        particles.rotation.x = elapsedTime * 0.02;
-        targetX = mouseX * 0.001;
-        targetY = mouseY * 0.001;
-        particles.rotation.y += 0.05 * (targetX - particles.rotation.y);
-        particles.rotation.x += 0.05 * (targetY - particles.rotation.x);
-        renderer.render(scene, camera);
+        
+        // PERFORMANCE FIX: GPU Logic Gate. Only runs math when background is visible.
+        if (window.scrollY < window.innerHeight * 1.2) {
+            const elapsedTime = clock.getElapsedTime();
+            particles.rotation.y = elapsedTime * 0.05;
+            particles.rotation.x = elapsedTime * 0.02;
+            targetX = mouseX * 0.001;
+            targetY = mouseY * 0.001;
+            particles.rotation.y += 0.05 * (targetX - particles.rotation.y);
+            particles.rotation.x += 0.05 * (targetY - particles.rotation.x);
+            renderer.render(scene, camera);
+        }
     }
     animate3D();
 
