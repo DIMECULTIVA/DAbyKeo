@@ -86,7 +86,7 @@ if (canvas) {
     function animate3D() {
         requestAnimationFrame(animate3D);
         
-        // PERFORMANCE FIX: GPU Logic Gate. Only runs math when background is visible.
+        // PERFORMANCE FIX: GPU Logic Gate
         if (window.scrollY < window.innerHeight * 1.2) {
             const elapsedTime = clock.getElapsedTime();
             particles.rotation.y = elapsedTime * 0.05;
@@ -234,7 +234,7 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
 > Created a dynamic bar chart tracking average salary against programming language preferences (Python vs. R vs. SQL).
 
 -- INSIGHT DELIVERED: 
-> The data revealed that Python users reported a significantly higher average starting salary compared to those who exclusively used R, and that respondents aged 25-35 formed the largest demographic actively seeking new roles.</div>`,
+> The data revealed that Python users reported a significantly higher average starting salary compared to individuals exclusively using R, and that respondents aged 25-35 formed the largest demographic actively seeking new roles.</div>`,
         
         githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Data%20Profession%20Data%20Breakdown.pbix" 
     },
@@ -242,6 +242,12 @@ SELECT * FROM Company_Year_Rank WHERE Ranking <= 5;`,
     project_python: {
         python: `<iframe src="python-project.html" width="100%" height="650px" style="border:none; background: #ffffff;"></iframe>`,
         githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/BMI_Calculator.ipynb" 
+    },
+
+    // ADDED: The new Web Scraping project
+    project_webscraping: {
+        python: `<iframe src="Webscrapping_Project.html" width="100%" height="650px" style="border:none; background: #ffffff;"></iframe>`,
+        githubLink: "https://github.com/DIMECULTIVA/KeoDataAnalyst/blob/main/Webscrapping_Project.ipynb" 
     }
 };
 
