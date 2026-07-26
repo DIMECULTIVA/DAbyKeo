@@ -303,8 +303,9 @@ Loading CRM Dashboard...
 
 <div class="dashboard-container">
 <iframe
-src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtkQyKgjvOgoBfFJRMMFBbrOuotcJ0BD6W-bPI3UWbmj4KRyM6z5NN6mrVKQrEOj8oILrGK4G63eMc/pubhtml?widget=true&headers=false"
-loading="lazy">
+src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtkQyKgjvOgoBfFJRMMFBbrOuotcJ0BD6W-bPI3UWbmj4KRyM6z5NN6mrVKQrEOj8oILrGK4G63eMc/pubhtml?gid=797103452&single=true&widget=false&headers=false&chrome=false"
+loading="lazy"
+style="width:100%; height:700px; border:none;">
 </iframe>
 </div>
 </div>
