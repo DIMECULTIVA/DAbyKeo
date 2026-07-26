@@ -396,14 +396,21 @@ function openModal(tech, projectId) {
     modalTitle.innerText = `${tech.toUpperCase()} - Project View`;
     const dataContent = projectData[projectId][tech];
     
-    if (tech === 'tableau' || tech === 'python') {
-        modalBody.innerHTML = dataContent;
-        modalBody.style.fontFamily = 'var(--font-main)';
-        modalBody.style.background = '#ffffff'; 
-        modalBody.style.padding = '0'; 
-        modalBody.style.overflow = 'hidden';
-        modalBody.style.color = '#000000';
-    } else if (tech === 'powerbi') {
+    if (tech === 'tableau' || tech === 'python' || tech === 'gsheets') {
+
+    modalBody.innerHTML = dataContent;
+
+    modalBody.style.fontFamily = 'var(--font-main)';
+
+    modalBody.style.background = '#0a0a0a';
+
+    modalBody.style.padding = '1.5rem';
+
+    modalBody.style.color = '#ffffff';
+
+    modalBody.style.overflowY = 'auto';
+
+} else if (tech === 'powerbi') {
         modalBody.innerHTML = dataContent;
         modalBody.style.background = '#0a0a0a';
         modalBody.style.padding = '1.5rem';
