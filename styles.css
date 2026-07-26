@@ -151,3 +151,189 @@ nav {
     .modal-footer .neon-btn { width: 100%; text-align: center; margin: 0 !important; justify-content: center; }
     .modal-body { padding-bottom: 2rem; }
 }
+/* ======================================
+CRM DASHBOARD PROJECT
+====================================== */
+
+
+.crm-case-study h3{
+
+margin-bottom:1rem;
+
+color:var(--neon-cyan);
+
+}
+
+
+
+.crm-case-study p{
+
+color:#ddd;
+
+margin-bottom:1.5rem;
+
+}
+
+
+
+.crm-case-study ul{
+
+margin-left:20px;
+
+margin-bottom:2rem;
+
+}
+
+
+
+.crm-case-study li{
+
+margin-bottom:8px;
+
+}
+
+
+
+.skills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin:20px 0 30px;
+
+}
+
+
+
+.skills span{
+
+
+padding:8px 15px;
+
+border-radius:20px;
+
+border:1px solid var(--neon-cyan);
+
+color:var(--neon-cyan);
+
+background:rgba(0,243,255,.08);
+
+font-size:.85rem;
+
+
+}
+
+
+
+.dashboard-title{
+
+margin-top:30px;
+
+}
+
+
+
+.dashboard-loader{
+
+text-align:center;
+
+padding:20px;
+
+color:var(--neon-purple);
+
+font-family:monospace;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+
+.dashboard-container{
+
+
+width:100%;
+
+height:650px;
+
+overflow:hidden;
+
+border-radius:12px;
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+
+0 0 30px rgba(0,243,255,.15);
+
+
+}
+
+
+
+.dashboard-container iframe{
+
+
+width:100%;
+
+height:100%;
+
+border:none;
+
+background:white;
+
+
+}
+
+
+
+@keyframes pulse{
+
+
+0%{
+
+opacity:.3;
+
+}
+
+
+50%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:.3;
+
+}
+
+
+}
+
+
+
+
+@media(max-width:768px){
+
+
+.dashboard-container{
+
+height:500px;
+
+}
+
+
+.skills span{
+
+font-size:.75rem;
+
+}
+
+
+}
