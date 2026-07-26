@@ -249,135 +249,68 @@ project_crm: {
     gsheets: `
 
 <div class="crm-case-study">
-
-
 <h3 class="neon-text-cyan">
 CRM Sales Performance Dashboard
 </h3>
-
-
 <p>
-
 <strong>Objective:</strong>
-
 Create a centralized sales intelligence dashboard
 that allows management to track revenue, sales
 performance, customer activity and pipeline health.
-
 </p>
-
-
-
 <h3>
 Business Problem
 </h3>
-
-
 <p>
-
 Sales teams often have fragmented information
 making it difficult to understand performance,
 identify trends and optimize decision making.
-
 </p>
-
-
-
-
 <h3>
 Dashboard Capabilities
 </h3>
-
-
 <ul>
-
 <li>Revenue Tracking</li>
-
 <li>Sales Pipeline Monitoring</li>
-
 <li>Conversion Rate Analysis</li>
-
 <li>Sales Representative Performance</li>
-
 <li>Customer Segmentation</li>
-
 <li>Monthly Sales Trends</li>
-
 <li>KPI Reporting</li>
-
 </ul>
-
-
-
 
 <h3>
 Tools Used
 </h3>
-
-
 <div class="skills">
-
 <span>Google Sheets</span>
-
 <span>Pivot Tables</span>
-
 <span>Pivot Charts</span>
-
 <span>Data Cleaning</span>
-
 <span>CRM Analytics</span>
-
 <span>Business Intelligence</span>
-
 <span>Conditional Formatting</span>
-
 <span>Dashboard Design</span>
-
 </div>
-
-
-
 
 <h3 class="dashboard-title">
-
 Live Dashboard
-
 </h3>
 
-
-
 <div class="dashboard-loader">
-
 Loading CRM Dashboard...
-
 </div>
-
-
 
 <div class="dashboard-container">
-
-
 <iframe
-
 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTtkQyKgjvOgoBfFJRMMFBbrOuotcJ0BD6W-bPI3UWbmj4KRyM6z5NN6mrVKQrEOj8oILrGK4G63eMc/pubhtml?widget=true&headers=false"
-
 loading="lazy">
-
 </iframe>
-
-
 </div>
-
-
 </div>
-
-
 `,
-
 githubLink:
-
 "https://docs.google.com/spreadsheets/d/1JtjipsO7gkqtKRsIfLJgC3KDn-5ybI1-qmXsLgqjt3k/edit?usp=sharing"
-
 },
     
     // ADDED: The new Web Scraping project
